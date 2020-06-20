@@ -1,0 +1,2 @@
+export const DUMMY_SUCCESS = 'DUMMY_SUCCESS';
+export const DUMMY_FAILURE = 'DUMMY_FAILURE';
