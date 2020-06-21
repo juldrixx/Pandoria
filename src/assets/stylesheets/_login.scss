@@ -1,0 +1,88 @@
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  .left-block {
+    background: $main-background-color;
+    box-shadow: $bs;
+
+    width: 50%;
+    min-width: 300px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+
+    @include tablet-portrait-and-below {
+      width: 100%;
+    }
+  }
+
+  .right-block {
+    background: $white;
+
+    width: 50%;
+
+    position: relative;
+    z-index: 1;
+
+    @include tablet-portrait-and-below {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  & > div {
+    padding: 20px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .error,
+  .warning {
+    color: $red;
+    font-weight: 700;
+    text-align: right;
+    margin-bottom: 14px;
+  }
+
+  .buttons {
+    margin-top: 6px;
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .pwd-forget {
+    margin-top: 6px;
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

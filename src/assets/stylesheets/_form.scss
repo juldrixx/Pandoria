@@ -1,0 +1,40 @@
+.ant-input,
+.ant-btn {
+  font-weight: 700;
+  border-color: $tertiary-color;
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  &:focus {
+    border-color: $secondary-color;
+    box-shadow: 0 0 0 2px $secondary-color-02;
+  }
+}
+
+.ant-btn {
+  color: $secondary-color;
+  border-color: $secondary-color;
+
+  &:hover,
+  &:focus {
+    color: $tertiary-color;
+    border-color: $tertiary-color;
+  }
+}
+
+a {
+  width: auto;
+  display: flex;
+  align-items: center;
+
+  &.button {
+    padding: 4px 15px;
+    font-weight: 700;
+  }
+
+  &.slim {
+    font-size: 10px;
+  }
+}

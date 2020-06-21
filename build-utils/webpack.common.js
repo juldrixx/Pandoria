@@ -55,7 +55,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "styles.css"
     }),
-    new FaviconsWebpackPlugin('./src/assets/img/favicon.jpg'),
+    new FaviconsWebpackPlugin('./src/assets/images/logo.png'),
   ],
   devServer: {
     contentBase: './dist',

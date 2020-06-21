@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import store from './js/store/index';
 import { Provider } from 'react-redux';
-import App from './js/App';
+import AppRouter from './js/AppRouter';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -11,7 +11,7 @@ import './assets/stylesheets/main.scss';
 
 render(
   <Provider store={store}>
-    <App />
+    <AppRouter />
   </Provider>,
   document.getElementById('root')
 );

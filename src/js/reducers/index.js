@@ -2,8 +2,8 @@
 // Name your file: XXXX.reducer.js
 // And export it with: xxxx: XXXX: xxxxReducer
 import { combineReducers } from 'redux';
-import dummyReducer from './dummy.reducer';
+import userReducer from './user.reducer';
 
 export default combineReducers({
-  dummy: dummyReducer,
+  user: userReducer,
 });

@@ -1,17 +1,17 @@
 import React from 'react';
 import {
-  DummyPage,  
+  HomePage,  
 } from '../pages';
 
 const pages = {
-  DummyPage: (props) => <DummyPage {...props} />,
+  HomePage: (props) => <HomePage {...props} />,
 }
 
 export const routes = [
-  // Dummy
+  // Home
   {
     path: '/',
     exact: true,
-    component: pages.DummyPage,
+    component: pages.HomePage,
   },
 ];

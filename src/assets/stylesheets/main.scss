@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400");
 @import "~antd/dist/antd.css";
+@import "_mixin.scss";
+@import "_variable.scss";
+@import "_form.scss";
+@import "_typo.scss";
+@import "_login.scss";
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: $main-background-color;
+  color: $primary-color;
 }

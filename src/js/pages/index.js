@@ -1,5 +1,11 @@
-import DummyPage from './Dummy';
+import E404Page from './E404';
+import HomePage from './Home';
+import LoginPage from './_auth/Login';
 
 export {
-    DummyPage,
+    E404Page,
+    
+    HomePage,
+
+    LoginPage,
 }
