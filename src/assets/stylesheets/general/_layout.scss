@@ -1,0 +1,148 @@
+body {
+  line-height: 1.4;
+  background: #f7f7f7;
+  // background: $white;
+  // padding-top: $headerHeight + 30px;
+}
+
+// .container {
+//   max-width: 1200px;
+//   padding: 0 20px;
+//   margin-left: auto;
+//   margin-right: auto;
+// 
+//   position: relative;
+// 
+//   @include large {
+//     max-width: 1340px;
+//   }
+// }
+
+// .box {
+//   background: $white;
+//   border-radius: 20px;
+//   box-shadow: $bsBox rgba($red, 0.3);
+
+//   padding: 40px 30px;
+//   margin-bottom: 40px;
+
+//   position: relative;
+
+//   &:empty {
+//       display: none;
+//   }
+
+//   &.table-box {
+//       padding: 0 0;
+
+//       > h2, > h3 {
+//           padding: 0 30px;
+//           margin-top: 40px;
+//           margin-bottom: 0;
+
+//           display: inline-block;
+//       }
+//   }
+
+//   &.title-box {
+//       padding: 20px 30px;
+//       margin-bottom: 20px;
+//       // box-shadow: none;
+//       // background: none;
+//       h2 {
+//           font-size: 28px;
+//       }
+//   }
+
+//   &.hide {
+//       display: none;
+//   }
+// }
+
+// article.infos {
+//   font-family: $fontTitle;
+
+//   margin: 4px 0 20px;
+
+//   ul {
+//       display: flex;
+//       flex-flow: row wrap;
+//   }
+
+//   li {
+//       font-size: 14px;
+//       b { font-size: 16px; }
+//       line-height: 1.8;
+
+//       margin-right: 40px;
+//       width: auto;
+
+//       a {
+//           color: $tc;
+//           text-decoration: underline;
+//       }
+//   }
+// }
+
+// article.buttons {
+//   &:not(.main-buttons):empty {
+//       display: none;
+//   }
+
+//   background: none !important;
+
+//   padding-top: 20px;
+//   margin-bottom: 20px;
+
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: space-between;
+
+//   @include mobile {
+//       flex-flow: column;
+//   }
+
+//   a {
+//       box-shadow: $bsBox $red;
+
+//       width: calc(50% - 10px);
+//       margin-bottom: 10px;
+
+//       justify-content: center;
+
+//       @include mobile {
+//           width: 100%;
+//       }
+
+//       &.full {
+//           width: 100%;
+//       }
+
+//       &.alt {
+//           box-shadow: $bsBox $lightgrey;
+//       }
+
+//       &.green {
+//           box-shadow: $bsBox $green;
+//       }
+//   }
+
+//   &.end-button {
+//       padding-top: 0;
+//       justify-content: flex-end;
+
+//       &:empty {
+//           margin: 0;
+//       }
+
+//       a {
+//           width: auto;
+//           box-shadow: none;
+//       }
+//   }
+// }
+
+#root {
+  position: relative;
+  min-height: 100%;
+}

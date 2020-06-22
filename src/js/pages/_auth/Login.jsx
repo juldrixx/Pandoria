@@ -9,19 +9,19 @@ import { userActions } from '../../actions';
 class LoginPage extends Component {
   constructor(props) {
     super(props)
-    this.state = { username: "", pwd: "" };
+    this.state = { username: '', password: '' };
 
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleLogin = this.handleLogin.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
-  handleInputChange(e) {
-    this.setState({ [e.target.name]: e.target.value })
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   handleLogin(e) {
     e.preventDefault();
-    this.props.loginUser(this.state.username, this.state.pwd)
+    this.props.loginUser(this.state.username, this.state.password);
   }
 
   render() {
@@ -31,48 +31,50 @@ class LoginPage extends Component {
           {title('Connexion')}
         </Helmet>
 
-        <div className="login-page">
-          <div className="left-block">
-            <form className="login-form">
+        <div className='login-page'>
+          <div className='left-block'>
+            <form className='login-form'>
               <header>
                 <h1>Connexion</h1>
               </header>
 
               <div>
                 <p>
-                  <label htmlFor="username">Nom d'utilisateur :</label>
-                  <Input type="text"
-                    name="username"
-                    id="username"
+                  <label htmlFor='username'>Nom d'utilisateur :</label>
+                  <Input type='text'
+                    name='username'
+                    id='username'
                     value={this.state.username}
-                    onChange={this.handleInputChange} />
+                    onChange={this.handleChange}
+                    autoComplete='username' />
                 </p>
 
                 <p>
-                  <label htmlFor="pwd">Mot de passe :</label>
-                  <Input type="password"
-                    name="pwd"
-                    id="pwd"
+                  <label htmlFor='password'>Mot de passe :</label>
+                  <Input type='password'
+                    name='password'
+                    id='password'
                     value={this.state.password}
-                    onChange={this.handleInputChange} />
+                    onChange={this.handleChange}
+                    autoComplete='current-password' />
                 </p>
 
-                {(this.props.error) && <b className="error">Nom d'utilisateur ou mot de passe incorrecte</b>}
+                {(this.props.error) && <b className='error'>Nom d'utilisateur ou mot de passe incorrecte</b>}
 
-                <div className="buttons">
-                  <a className="button" onClick={() => history.push('/register')}>S'inscrire</a>
+                <div className='buttons'>
+                  <a className='button' onClick={() => history.push('/register')}>S'inscrire</a>
                   <Button onClick={this.handleLogin}>Se connecter</Button>
                 </div>
-                <div className="pwd-forget">
-                  <a className="slim" onClick={() => history.push('/register')}>Mot de passe oublié ?</a>
+                <div className='password-forget'>
+                  <a className='slim' onClick={() => history.push('/register')}>Mot de passe oublié ?</a>
                 </div>
               </div>
 
             </form>
           </div>
 
-          <div className="right-block">
-            <img src={logo} alt="Pandoria Logo" />
+          <div className='right-block'>
+            <img src={logo} alt='Pandoria Logo' />
           </div>
         </div>
 

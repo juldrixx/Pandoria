@@ -4,7 +4,15 @@ button,
 textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $font;
   font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+.title {
+  font-family: $fontTitle;
 }
 
 h1 {

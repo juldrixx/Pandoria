@@ -38,3 +38,27 @@ a {
     font-size: 10px;
   }
 }
+
+label {
+  font-size: 16px;
+  font-weight: 400;
+
+  color: $black;
+
+  margin-bottom: 6px;
+
+  display: inline-block;
+
+  em {
+      white-space: nowrap;
+  }
+}
+
+form p {
+  width: 100%;
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+}

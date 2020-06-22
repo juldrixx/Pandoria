@@ -3,7 +3,7 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { routes } from './constants';
 import { history } from './utils';
 import { Header, Footer } from './components';
-import { LoginPage, E404Page } from './pages';
+import { LoginPage, RegisterPage, E404Page } from './pages';
 import { connect } from 'react-redux';
 
 class AppRouter extends Component {
@@ -35,6 +35,7 @@ class AppRouter extends Component {
         <Fragment>
           <Switch>
             <Route exact path='/login' component={LoginPage} />
+            <Route exact path='/register' component={RegisterPage} />
             <Route component={LoginPage} />
           </Switch>
         </Fragment>

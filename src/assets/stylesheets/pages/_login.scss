@@ -77,12 +77,18 @@
     align-items: center;
   }
 
-  .pwd-forget {
+  .password-forget {
     margin-top: 6px;
 
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+}
+
+.register {
+  .left-block {
+    width: 100%;
   }
 }

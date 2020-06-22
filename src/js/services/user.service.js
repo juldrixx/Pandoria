@@ -3,6 +3,7 @@ import { API_URL } from '../constants';
 export const userService = {
   login,
   logout,
+  register,
 }
 
 function login(username, password) {
@@ -14,10 +15,8 @@ function login(username, password) {
     },
 
     body: JSON.stringify({
-      user: {
-        username: username,
-        password: password
-      }
+      username: username,
+      password: password
     })
   }
 
@@ -25,10 +24,12 @@ function login(username, password) {
     fetch(API_URL + '/login', postInfo)
       .then(result => {
         if (!result.ok) throw result;
+        console.log('azeaze')
         result.json()
           .then(r => {
-            const user = { ...r, token };
+            const user = { ...r.user, token: r.token };
             localStorage.setItem('user', JSON.stringify(user));
+            console.log(user)
             resolve(user);
           })
           .catch(error => {
@@ -44,4 +45,34 @@ function login(username, password) {
 function logout() {
   localStorage.removeItem('user');
   return {};
+}
+
+function register(username, email, password) {
+  const postInfo = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+
+    body: JSON.stringify({
+      username: username,
+      email: email,
+      password: password
+    })
+  }
+
+  return new Promise((resolve, reject) => {
+    fetch(API_URL + '/register', postInfo)
+      .then(result => {
+        if (!result.ok) throw result;
+        return result.json();
+      })
+      .then(result => {
+        resolve(result);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 }

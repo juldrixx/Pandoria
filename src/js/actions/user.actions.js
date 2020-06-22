@@ -4,6 +4,7 @@ import {
   LOGOUT_USER
 } from "../constants";
 import { userService } from "../services";
+import { history } from "../utils";
 
 export const userActions = {
   login,
