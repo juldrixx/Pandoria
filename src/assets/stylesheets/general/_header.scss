@@ -1,0 +1,175 @@
+.general-header {
+  height: $headerHeight;
+  padding-top: 10px;
+  margin-bottom: 60px;
+
+  position: relative;
+  z-index: 999;
+
+  @include mobile-landscape-and-below {
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include mobile-landscape-and-below {
+      flex-flow: column;
+    }
+  }
+
+  a {
+    font-family: $fontTitle;
+    font-weight: 700;
+    font-size: 14px;
+
+    height: 40px;
+    line-height: 40px;
+    padding: 0 12px;
+
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .home-link {
+    float: left;
+    margin-right: 24px;
+    padding-left: 0;
+    height: $headerHeight;
+
+    img {
+      height: $headerHeight;
+      padding: 8px 0;
+    }
+  }
+
+  .primary-links {
+    height: $headerHeight;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    @include mobile-landscape-and-below {
+      margin-top: 20px;
+    }
+
+    > a {
+      @include themed() {
+        color: t($secondary-color);
+      }
+
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+
+      @include icon {
+        font-size: 16px;
+        margin-right: 8px;
+      }
+
+      @include mobile-landscape-and-below {
+        height: 30px;
+        line-height: 30px;
+        padding: 0;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+
+      position: relative;
+
+      &:after {
+        content: "";
+
+        @include themed() {
+          background: t($secondary-color);
+        }
+
+        transition: all 0.2s ease;
+
+        width: 0;
+        height: 3px;
+
+        display: block;
+
+        position: absolute;
+        left: 40px;
+        bottom: 0;
+
+        @include mobile-landscape-and-below {
+          left: 26px;
+          bottom: -6px;
+        }
+      }
+
+      &:hover {
+        &:after {
+          width: 40px;
+        }
+      }
+
+      &.active,
+      &:hover.active {
+        opacity: 1;
+
+        &:after {
+          width: 40px;
+
+          @include themed() {
+            background: t($primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  .secondary-links {
+    margin-left: auto;
+
+    height: $headerHeight;
+    display: flex;
+    align-items: center;
+
+    @include mobile-landscape-and-below {
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
+
+    .user-link {
+      font-size: 12px;
+      height: auto;
+      line-height: 1.4;
+
+      small {
+        font-size: 10px;
+        font-weight: 400;
+
+        @include themed() {
+          color: t($secondary-color);
+        }
+
+        margin-top: 4px;
+        line-height: 1;
+
+        display: block;
+      }
+    }
+
+    .logout-button {
+      @include themed() {
+        color: t($primary-color);
+      }
+
+      padding-right: 0;
+
+      @include icon {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+}

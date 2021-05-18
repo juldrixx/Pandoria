@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Helmet } from 'react-helmet';
+import { title } from '../utils';
 
 class HomePage extends Component {
-  render() {    
+  render() {
     return (
-      <div>
+      <Fragment>
+        <Helmet>
+          {title('Accueil')}
+        </Helmet>
 
-      </div>
+        <div className='home-page'>
+          <h1>Accueil</h1>
+          <div>TODO</div>
+        </div>
+      </Fragment>
     );
   }
 }

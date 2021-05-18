@@ -1,14 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400");
 @import "~antd/dist/antd.css";
-@import "imports/_mixin.scss";
-@import "imports/_reset.scss";
-@import "imports/_variable.scss";
-@import "general/_form.scss";
-@import "general/_layout.scss";
-@import "general/_typo.scss";
-@import "pages/_login.scss";
 
-body {
-  background-color: $main-background-color;
-  color: $primary-color;
-}
+@import "imports/mixins";
+@import "imports/reset";
+@import "imports/variable";
+@import "imports/variable-light";
+@import "imports/variable-dark";
+
+@import "theme/color-themes";
+
+@import "general/form";
+@import "general/layout";
+@import "general/typo";
+@import "general/header";
+@import "general/footer";
+@import "general/card";
+@import "general/pagination";
+
+@import "pages/login";
+@import "pages/home";
+@import "pages/manga";
+
+@import "components/themeChanger";

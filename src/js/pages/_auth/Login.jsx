@@ -3,12 +3,13 @@ import Helmet from 'react-helmet';
 import { title, history } from '../../utils';
 import { connect } from 'react-redux';
 import logo from '../../../assets/images/logo_with_text.png';
+import logoDark from '../../../assets/images/logo_with_text-dark.png';
 import { Input, Button } from 'antd';
 import { userActions } from '../../actions';
 
 class LoginPage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { username: '', password: '' };
 
     this.handleChange = this.handleChange.bind(this);
@@ -74,7 +75,7 @@ class LoginPage extends Component {
           </div>
 
           <div className='right-block'>
-            <img src={logo} alt='Pandoria Logo' />
+            <img src={this.props.dark ? logoDark : logo} alt='Pandoria Logo' />
           </div>
         </div>
 
@@ -85,7 +86,8 @@ class LoginPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    error: state.user.loginError
+    error: state.user.loginError,
+    dark: state.theme.dark,
   };
 };
 

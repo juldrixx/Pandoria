@@ -3,3 +3,4 @@
 // And export it with: export * from './XXXX.actions'
 
 export * from './user.actions';
+export * from './theme.actions';

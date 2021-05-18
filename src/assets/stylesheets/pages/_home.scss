@@ -1,0 +1,27 @@
+.home-page {
+  h2.switcher {
+    margin-top: 30px;
+
+    display: inline-block;
+    float: right;
+
+    a {
+      font-size: 18px;
+      color: $secondary-color;
+
+      margin-right: 20px;
+
+      &.active {
+        color: $primary-color;
+      }
+    }
+
+    @include mobile-landscape-and-below {
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      display: block;
+      float: none;
+    }
+  }
+}

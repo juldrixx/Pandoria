@@ -1,0 +1,32 @@
+.general-footer {
+  margin-top: 80px;
+
+  .container {
+    @include themed() {
+      border-top: 1px solid t($tertiary-color);
+    }
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  small {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: $fontTitle;
+
+    @include themed() {
+      color: t($secondary-color);
+    }
+
+    .separator {
+      font-weight: 400;
+      font-family: $font;
+      display: inline-block;
+      margin: 0 12px;
+    }
+  }
+}

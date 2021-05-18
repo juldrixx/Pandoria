@@ -13,14 +13,14 @@ function userReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         logged: true,
-        infos: action.payload,
+        info: action.payload,
       };
 
     case LOGIN_ERROR:
       return {
         ...state,
         logged: false,
-        infos: {},
+        info: {},
         loginError: true,
       };
 
@@ -28,7 +28,7 @@ function userReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         logged: false,
-        infos: {},
+        info: {},
       };
 
     default:

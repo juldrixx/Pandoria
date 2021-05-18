@@ -3,7 +3,9 @@
 // And export it with: xxxx: XXXX: xxxxReducer
 import { combineReducers } from 'redux';
 import userReducer from './user.reducer';
+import themeReducer from './theme.reducer';
 
 export default combineReducers({
   user: userReducer,
+  theme: themeReducer,
 });

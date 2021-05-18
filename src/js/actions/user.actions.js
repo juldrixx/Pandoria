@@ -9,7 +9,7 @@ import { history } from "../utils";
 export const userActions = {
   login,
   logout,
-}
+};
 
 function login(username, password) {
   return function (dispatch) {
@@ -26,7 +26,7 @@ function login(username, password) {
 
 function logout() {
   return function (dispatch) {
-      dispatch({ type: LOGOUT_USER, payload: userService.logout() })
-      history.replace('/login');
+    dispatch({ type: LOGOUT_USER, payload: userService.logout() });
+    history.replace('/login');
   }
 };

@@ -1,4 +1,5 @@
 import { API_URL } from '../constants';
+import { updateUserForAbilities } from '../constants/ability';
 
 export const userService = {
   login,
@@ -24,12 +25,11 @@ function login(username, password) {
     fetch(API_URL + '/login', postInfo)
       .then(result => {
         if (!result.ok) throw result;
-        console.log('azeaze')
         result.json()
           .then(r => {
             const user = { ...r.user, token: r.token };
             localStorage.setItem('user', JSON.stringify(user));
-            console.log(user)
+            updateUserForAbilities(user);
             resolve(user);
           })
           .catch(error => {

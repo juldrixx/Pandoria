@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 10px;
+
+  & > * {
+    width: 33%;
+  }
+
+  .previous {
+    text-align: left;
+  }
+
+  .index {
+    justify-content: center;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    input {
+      width: 50px;
+      margin-right: 5px;
+      text-align: center;
+    }
+  }
+
+  .next {
+    text-align: right;
+  }
+}

@@ -3,13 +3,13 @@ import Helmet from 'react-helmet';
 import { title, history } from '../../utils';
 import { connect } from 'react-redux';
 import logo from '../../../assets/images/logo_with_text.png';
+import logoDark from '../../../assets/images/logo_with_text-dark.png';
 import { Input, Button } from 'antd';
-import { userActions } from '../../actions';
 import { userService } from '../../services';
 
 class RegisterPage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { username: '', email: '', password: '', password_confirm: '', error: false };
 
     this.handleChange = this.handleChange.bind(this);
@@ -109,7 +109,7 @@ class RegisterPage extends Component {
           </div>
 
           <div className='right-block'>
-            <img src={logo} alt='Pandoria Logo' />
+            <img src={this.props.dark ? logoDark : logo} alt='Pandoria Logo' />
           </div>
         </div>
 
@@ -118,4 +118,10 @@ class RegisterPage extends Component {
   }
 }
 
-export default RegisterPage;
+const mapStateToProps = (state) => {
+  return {
+    dark: state.theme.dark,
+  };
+}
+
+export default connect(mapStateToProps)(RegisterPage);

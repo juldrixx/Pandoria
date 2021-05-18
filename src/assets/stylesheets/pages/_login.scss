@@ -5,8 +5,10 @@
   flex-flow: row nowrap;
 
   .left-block {
-    background: $main-background-color;
-    box-shadow: $bs;
+    @include themed() {
+      background: t($main-background-color);
+      box-shadow: t($bs);
+    }
 
     width: 50%;
     min-width: 300px;
@@ -24,6 +26,9 @@
 
   .right-block {
     background: $white;
+    @include themed() {
+      background: t($wb);
+    }
 
     width: 50%;
 

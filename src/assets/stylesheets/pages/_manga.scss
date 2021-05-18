@@ -1,0 +1,27 @@
+.manga-page {
+  .header {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    & > * {
+      flex: 1 0 auto;
+    }
+
+    .add_form {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      input {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .search {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

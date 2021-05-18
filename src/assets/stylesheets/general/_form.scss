@@ -1,26 +1,44 @@
 .ant-input,
 .ant-btn {
   font-weight: 700;
-  border-color: $tertiary-color;
+
+  @include themed() {
+    border-color: t($tertiary-color);
+  }
 
   &:hover {
-    border-color: $secondary-color;
+    @include themed() {
+      border-color: t($secondary-color);
+    }  
   }
 
   &:focus {
-    border-color: $secondary-color;
-    box-shadow: 0 0 0 2px $secondary-color-02;
+    @include themed() {
+      border-color: t($secondary-color);
+      box-shadow: t($bs);
+    }
   }
 }
 
 .ant-btn {
-  color: $secondary-color;
-  border-color: $secondary-color;
+  @include themed() {
+    color: t($secondary-color);
+    border-color: t($secondary-color);
+    background: t($wb);
+  }
 
   &:hover,
   &:focus {
-    color: $tertiary-color;
-    border-color: $tertiary-color;
+    @include themed() {
+      color: t($tertiary-color);
+      border-color: t($tertiary-color);
+      background: t($wb);
+    }
+  }
+
+  &.round {
+    border: none;
+    border-radius: 10px;
   }
 }
 
@@ -43,7 +61,9 @@ label {
   font-size: 16px;
   font-weight: 400;
 
-  color: $black;
+  @include themed() {
+    color: t($bw);
+  }
 
   margin-bottom: 6px;
 
