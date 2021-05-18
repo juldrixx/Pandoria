@@ -10,7 +10,7 @@ class Footer extends Component {
       <footer className='general-footer'>
         <div className='container'>
           <small>
-            <i>© 2020 Pandoria</i>
+            <i>© {new Date().getFullYear()} Pandoria</i>
           </small>
           <small>Réalisé par <a href={'https://github.com/juldrixx'} target={'_blank'}>Juldrixx</a></small>
         </div>
