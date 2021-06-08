@@ -104,6 +104,7 @@ class MangaListPage extends Component {
           <div className='header'>
             <h1>Mes mangas</h1>
             <Button className='round top-right-corner' onClick={() => history.push('/mangas/available')}>Gestion des mangas</Button>
+            <Button className='round top-right-corner' onClick={() => history.push('/mangas/search')}>Rechercher un manga</Button>
           </div>
 
           <div className='search'>

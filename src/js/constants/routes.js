@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomePage, MangaPage, MangaListPage, MangaAvailableListPage } from '../pages';
+import { HomePage, MangaPage, MangaListPage, MangaAvailableListPage, MangaSearchPage } from '../pages';
 import { RANK_USER, RANK_ADMIN } from './dbValues';
 
 const pages = {
@@ -8,6 +8,7 @@ const pages = {
   MangaPage: (props) => <MangaPage {...props} />,
   MangaListPage: (props) => <MangaListPage {...props} />,
   MangaAvailableListPage: (props) => <MangaAvailableListPage {...props} />,
+  MangaSearchPage: (props) => <MangaSearchPage {...props} />,
 }
 
 export const routes = [
@@ -36,9 +37,15 @@ export const routes = [
     allowed: [RANK_USER, RANK_ADMIN],
   },
   {
+    path: '/mangas/search',
+    exact: true,
+    component: pages.MangaSearchPage,
+    allowed: [RANK_USER, RANK_ADMIN],
+  },
+  {
     path: '/mangas/:id',
     exact: true,
     component: pages.MangaPage,
     allowed: [RANK_USER, RANK_ADMIN],
-  }
+  },
 ];

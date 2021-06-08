@@ -5,6 +5,7 @@ import RegisterPage from './_auth/Register';
 import MangaPage from './Manga/Manga';
 import MangaListPage from './Manga/List';
 import MangaAvailableListPage from './Manga/AvailableList';
+import MangaSearchPage from './Manga/Search';
 
 export {
     E404Page,
@@ -17,4 +18,5 @@ export {
     MangaPage,
     MangaListPage,
     MangaAvailableListPage,
+    MangaSearchPage,
 }
