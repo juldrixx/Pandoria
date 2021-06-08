@@ -95,12 +95,12 @@ class MangaSearchPage extends Component {
     return (
       <Fragment>
         <Helmet>
-          {title('Recherher un manga')}
+          {title('Rechercher un manga')}
         </Helmet>
 
         <div className='manga-page'>
           <div className='header'>
-            <h1>Recherher un manga</h1>
+            <h1>Rechercher un manga</h1>
           </div>
 
           <div className='search'>
