@@ -1,19 +1,25 @@
 import React from 'react';
-import { render } from 'react-dom';
-import store from './js/store/index';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import AppRouter from './js/AppRouter';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
-import './assets/stylesheets/main.scss';
+import './stylesheets/main.scss';
+import App from './js/App';
+import store from './js/store/index';
 
-render(
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>,
-  document.getElementById('root')
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
 
-module.hot.accept();
+if (module && module.hot) module.hot.accept();

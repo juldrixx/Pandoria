@@ -1,51 +1,20 @@
 import React from 'react';
-import { HomePage, MangaPage, MangaListPage, MangaAvailableListPage, MangaSearchPage } from '../pages';
-import { RANK_USER, RANK_ADMIN } from './dbValues';
+import { Home } from '@mui/icons-material';
 
-const pages = {
-  HomePage: (props) => <HomePage {...props} />,
+import { HomePage } from '../pages';
+import E404Page from '../pages/E404/E404';
 
-  MangaPage: (props) => <MangaPage {...props} />,
-  MangaListPage: (props) => <MangaListPage {...props} />,
-  MangaAvailableListPage: (props) => <MangaAvailableListPage {...props} />,
-  MangaSearchPage: (props) => <MangaSearchPage {...props} />,
-}
-
-export const routes = [
-  // Home
+export default [
   {
+    name: 'Home',
+    element: <HomePage />,
     path: '/',
-    exact: true,
-    component: pages.HomePage,
-    allowed: [RANK_USER, RANK_ADMIN],
-  },
-
-  // Mangas
-  {
-    path: '/mangas',
-    exact: true,
-    component: pages.MangaListPage,
-    navbar: true,
-    icon: 'import_contacts',
-    label: 'Mangas',
-    allowed: [RANK_USER, RANK_ADMIN],
+    icon: <Home />,
   },
   {
-    path: '/mangas/available',
-    exact: true,
-    component: pages.MangaAvailableListPage,
-    allowed: [RANK_USER, RANK_ADMIN],
-  },
-  {
-    path: '/mangas/search',
-    exact: true,
-    component: pages.MangaSearchPage,
-    allowed: [RANK_USER, RANK_ADMIN],
-  },
-  {
-    path: '/mangas/:id',
-    exact: true,
-    component: pages.MangaPage,
-    allowed: [RANK_USER, RANK_ADMIN],
+    name: 'Error 404',
+    element: <E404Page />,
+    path: '*',
+    icon: <Home />,
   },
 ];

@@ -1,0 +1,76 @@
+body,
+input,
+button,
+textarea {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+.title {
+  font-family: $fontTitle;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  margin-bottom: 20px;
+
+  @include themed() {
+    color: t($primary-color);
+  }
+
+  display: inline-block;
+
+  @include mobile {
+    font-size: 56px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+
+  @include themed() {
+    color: t($secondary-color);
+  }
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 700;
+
+  @include themed() {
+    color: t($tertiary-color);
+  }
+
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: underline;
+  @include themed() {
+    color: t($secondary-color);
+  }
+
+  &:hover,
+  &:active {
+    @include themed() {
+      color: t($tertiary-color);
+    }
+  }
+}
+
+i {
+  font-style: normal;
+}
+
+b {
+  font-weight: 700;
+}

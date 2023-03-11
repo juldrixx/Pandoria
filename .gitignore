@@ -65,3 +65,9 @@ tmp/
 
 # file create by the production mode
 dist/
+
+# IntelliJ IDEA directory
+.idea/
+
+# JSDoc directory
+docs/

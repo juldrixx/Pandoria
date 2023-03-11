@@ -1,0 +1,42 @@
+body {
+  line-height: 1.4;
+  background: #f7f7f7;
+}
+
+#container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+
+  @include desktop-and-up {
+    max-width: 1340px;
+  }
+}
+
+.theme {
+  height: 100vh;
+  width: 100%;
+}
+
+#base {
+  @include themed() {
+    background: t($main-background-color);
+    color: t($primary-color);
+    color-scheme: t($color-scheme);
+  }
+
+  &:after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    overflow-y: auto;
+    min-height: 100vh;
+
+    @include themed() {
+      background: t($main-background-color);
+    }
+  }
+}

@@ -1,2 +1,2 @@
-export const APP_NAME = "Pandoria";
-export const APP_SEPARATOR = "-";
+export const DOCUMENT_TITLE = 'Pandoria';
+export const TITLE_SEPARATOR = '|';

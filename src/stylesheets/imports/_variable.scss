@@ -1,0 +1,23 @@
+$white: #ffffff;
+$red: #dd3336;
+$green: #45aa21;
+$black: #000000;
+$blue: #3e98b3;
+$yellow: #ecde19;
+$orange: #ff9129;
+
+$headerHeight: 80px;
+$radius: 3px;
+
+$fontTitle: 'Montserrat', sans-serif;
+$font: 'Roboto', sans-serif;
+
+:export {
+  white: $white;
+  red: $red;
+  green: $green;
+  black: $black;
+  blue: $blue;
+  yellow: $yellow;
+  orange: $orange;
+}

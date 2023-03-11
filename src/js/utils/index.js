@@ -1,2 +1,3 @@
-export * from './history';
-export * from './renderers';
+import rendererUtil from './renderer.util';
+
+export default rendererUtil;

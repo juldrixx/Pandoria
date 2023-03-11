@@ -1,9 +1,9 @@
-import { LOGIN_USER, LOGIN_ERROR, LOGOUT_USER } from '../constants';
+import { LOGIN_USER, LOGIN_ERROR, LOGOUT_USER } from '../constants/actions';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const INITIAL_STATE = {
-  logged: (user) ? true : false,
-  info: (user) ? user : {},
+  logged: !!user,
+  info: user || {},
   loginError: false,
 };
 

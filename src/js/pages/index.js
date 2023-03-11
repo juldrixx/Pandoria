@@ -1,22 +1,6 @@
-import E404Page from './E404';
-import HomePage from './Home';
+import HomePage from './Home/Home';
+import E404Page from './E404/E404';
 import LoginPage from './_auth/Login';
 import RegisterPage from './_auth/Register';
-import MangaPage from './Manga/Manga';
-import MangaListPage from './Manga/List';
-import MangaAvailableListPage from './Manga/AvailableList';
-import MangaSearchPage from './Manga/Search';
 
-export {
-    E404Page,
-    
-    HomePage,
-
-    LoginPage,
-    RegisterPage,
-
-    MangaPage,
-    MangaListPage,
-    MangaAvailableListPage,
-    MangaSearchPage,
-}
+export { HomePage, E404Page, LoginPage, RegisterPage };

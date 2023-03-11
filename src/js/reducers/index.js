@@ -2,10 +2,10 @@
 // Name your file: XXXX.reducer.js
 // And export it with: xxxx: XXXX: xxxxReducer
 import { combineReducers } from 'redux';
-import userReducer from './user.reducer';
 import themeReducer from './theme.reducer';
+import userReducer from './user.reducer';
 
 export default combineReducers({
-  user: userReducer,
   theme: themeReducer,
+  user: userReducer,
 });

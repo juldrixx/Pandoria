@@ -1,4 +1,4 @@
-import { CHANGE_THEME } from '../constants';
+import { CHANGE_THEME } from '../constants/actions';
 
 const dark = localStorage.getItem('dark');
 const INITIAL_STATE = {

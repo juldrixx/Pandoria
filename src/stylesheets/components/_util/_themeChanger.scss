@@ -1,0 +1,18 @@
+#theme-changer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  z-index: 999;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  @include icon {
+    @include themed() {
+      color: t($primary-color);
+    }
+  }
+}

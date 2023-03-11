@@ -1,14 +1,15 @@
-import {
-  CHANGE_THEME,
-} from "../constants";
-import { themeService } from "../services";
-
-export const themeActions = {
-  changeTheme,
-};
+import { CHANGE_THEME } from '../constants/actions';
+import themeService from '../services';
 
 function changeTheme(dark) {
-  return function (dispatch) {
-    dispatch({ type: CHANGE_THEME, payload: themeService.changeTheme(dark) });
-  }
+  return function func(dispatch) {
+    dispatch({
+      type: CHANGE_THEME,
+      payload: themeService.changeTheme(dark),
+    });
+  };
+}
+
+export default {
+  changeTheme,
 };
