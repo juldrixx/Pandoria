@@ -1,3 +1,4 @@
 import themeService from './theme.service';
+import userService from './user.service';
 
-export default themeService;
+export { themeService, userService };

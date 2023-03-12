@@ -2,8 +2,6 @@ import { FileUploadOutlined } from '@mui/icons-material';
 import { Alert, Button, Snackbar } from '@mui/material';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Validator } from 'jsonschema';
-import Schema from '../../constants/schema';
 
 function UploadButton(props) {
   const [showError, setShowError] = React.useState(false);
@@ -30,13 +28,8 @@ function UploadButton(props) {
         const { onUpload } = props;
         const json = JSON.parse(e.target.result);
 
-        const v = new Validator();
-
-        if (!v.validate(json, Schema).valid) setShowError(true);
-        else {
-          setTimeout(() => onUpload(json), 500);
-          setShowSuccess(true);
-        }
+        setTimeout(() => onUpload(json), 500);
+        setShowSuccess(true);
       } catch {
         setShowError(true);
       }

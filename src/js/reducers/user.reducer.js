@@ -14,6 +14,7 @@ function userReducer(state = INITIAL_STATE, action) {
         ...state,
         logged: true,
         info: action.payload,
+        loginError: false,
       };
 
     case LOGIN_ERROR:

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { DOCUMENT_TITLE, TITLE_SEPARATOR } from '../constants/appInfo';
+import { Helmet } from 'react-helmet-async';
+import { DOCUMENT_TITLE, TITLE_SEPARATOR } from '../constants/app';
 
 function title(pageName) {
   return (

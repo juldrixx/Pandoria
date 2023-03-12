@@ -3,5 +3,6 @@
 // And export it with: import XXXXActions from './XXXX.actions'
 
 import themeActions from './theme.actions';
+import userActions from './user.actions';
 
-export default { themeActions };
+export default { themeActions, userActions };

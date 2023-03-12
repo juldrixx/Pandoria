@@ -4,7 +4,7 @@
   display: flex;
   flex-flow: row nowrap;
 
-  .left-block {
+  .form-block {
     @include themed() {
       background: t($main-background-color);
       box-shadow: t($bs);
@@ -15,6 +15,8 @@
 
     display: flex;
     align-items: center;
+    flex-flow: column wrap;
+    justify-content: center;
 
     position: relative;
     z-index: 2;
@@ -22,9 +24,14 @@
     @include tablet-portrait-and-below {
       width: 100%;
     }
+
+    footer {
+      width: 100%;
+      max-width: 600px;
+    }
   }
 
-  .right-block {
+  .image-block {
     background: $white;
     @include themed() {
       background: t($wb);
@@ -46,54 +53,53 @@
       transform: translateX(-50%) translateY(-50%);
     }
   }
-}
 
-.login-form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-
-  & > div {
-    padding: 20px;
+  form {
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 
     display: flex;
-    flex-flow: column nowrap;
-  }
-
-  .error,
-  .warning {
-    color: $red;
-    font-weight: 700;
-    text-align: right;
-    margin-bottom: 14px;
-  }
-
-  .buttons {
-    margin-top: 6px;
-
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    flex-flow: column wrap;
     align-items: center;
+
+    & > div {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .error,
+    .warning {
+      color: $red;
+      font-weight: 700;
+      text-align: right;
+      margin-bottom: 14px;
+    }
+
+    .buttons {
+      margin-top: 6px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      & > button {
+        margin-left: 10px;
+      }
+    }
+
+    .password-forget {
+      margin-top: 6px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
 
-  .password-forget {
-    margin-top: 6px;
-
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-}
-
-.register {
-  .left-block {
-    width: 100%;
-  }
+  &.register {
+    .form-block {
+      width: 100%;
+    }
+  }  
 }

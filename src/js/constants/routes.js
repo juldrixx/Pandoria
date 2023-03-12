@@ -3,6 +3,7 @@ import { Home } from '@mui/icons-material';
 
 import { HomePage } from '../pages';
 import E404Page from '../pages/E404/E404';
+import { RANK_ADMIN, RANK_USER } from './dbValues';
 
 export default [
   {
@@ -10,11 +11,12 @@ export default [
     element: <HomePage />,
     path: '/',
     icon: <Home />,
+    allowed: [RANK_USER, RANK_ADMIN],
   },
   {
     name: 'Error 404',
     element: <E404Page />,
     path: '*',
-    icon: <Home />,
+    allowed: [RANK_USER, RANK_ADMIN],
   },
 ];

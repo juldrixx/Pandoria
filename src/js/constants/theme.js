@@ -1,13 +1,13 @@
-import { alpha, createTheme } from '@mui/material';
+import { createTheme } from '@mui/material';
 import lightVariables from '../../stylesheets/imports/_variable-light.scss';
 import darkVariables from '../../stylesheets/imports/_variable-dark.scss';
-import colorVariables from '../../stylesheets/imports/_variable.scss';
+// import colorVariables from '../../stylesheets/imports/_variable.scss';
 
 export default (dark) =>
   createTheme({
     palette: {
       primary: {
-        main: colorVariables.blue,
+        main: dark ? darkVariables.primaryColor : lightVariables.primaryColor,
       },
       secondary: {
         main: dark
@@ -16,12 +16,14 @@ export default (dark) =>
       },
       text: {
         primary: dark
-          ? darkVariables.tertiaryColor
-          : lightVariables.tertiaryColor,
+          ? darkVariables.primaryColor
+          : lightVariables.primaryColor,
         secondary: dark
           ? darkVariables.secondaryColor
           : lightVariables.secondaryColor,
-        tertiary: colorVariables.white,
+        tertiary: dark
+          ? darkVariables.tertiaryColor
+          : lightVariables.tertiaryColor,
       },
       background: {
         default: dark
@@ -30,38 +32,7 @@ export default (dark) =>
         paper: dark ? darkVariables.primaryColor : lightVariables.primaryColor,
       },
     },
-    components: {
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            ':hover': {
-              backgroundColor: alpha(colorVariables.blue, 0.2),
-            },
-            color: dark
-              ? darkVariables.tertiaryColor
-              : lightVariables.tertiaryColor,
-          },
-        },
-      },
-      MuiIconButton: {
-        styleOverrides: {
-          root: {
-            color: dark
-              ? darkVariables.tertiaryColor
-              : lightVariables.tertiaryColor,
-          },
-        },
-      },
-      // MuiListItemIcon: {
-      //   styleOverrides: {
-      //     root: {
-      //       color: dark
-      //         ? darkVariables.tertiaryColor
-      //         : lightVariables.tertiaryColor,
-      //     },
-      //   },
-      // },
-    },
+    components: {},
   });
 
 // export default (dark) =>
