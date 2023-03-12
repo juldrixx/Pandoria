@@ -2,6 +2,10 @@
   display: flex;
   flex-flow: row wrap;
 
+  .load-spinner {
+    margin: 0 auto;
+  }
+
   .card {
     position: relative;
     width: 25%;

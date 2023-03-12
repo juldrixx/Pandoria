@@ -1,0 +1,55 @@
+{
+  "translation": {
+    "common": {
+      "cancel": "Annuler",
+      "close": "Fermer",
+      "retry": "Réessayer",
+      "submit": "Valider"
+    },
+    "component": {
+      "pagination": {
+        "rowPerPage": "Lignes par page :",
+        "displayedRow": {
+          "of": "sur",
+          "moreThan": "plus de"
+        },
+        "itemAria": {
+          "last": "Aller à la dernière page",
+          "first": "Aller à la première page",
+          "next": "Aller à la page suivante",
+          "previous": "Aller à la page précédente"
+        }
+      }
+    },
+    "auth": {
+      "title": "Connexion",
+      "register": "S'inscrire",
+      "login": "Se connecter",
+      "passwordForget": "Mot de passe oublié ?",
+      "errorLogin": "Nom d'utilisateur ou mot de passe incorrecte",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "registration": "Inscription",
+      "email": "Adresse e-mail",
+      "passwordConfirm": "Confirmation du mot de passe",
+      "errorRegister": "Les mots de passe doivent être identique"
+    },
+    "footer": {
+      "madeBy": "Réalisé par"
+    },
+    "route": {
+      "home": "Accueil",
+      "error404": "Erreur 404",
+      "mangas": "Mangas"
+    },
+    "manga": {
+      "my": "Mes mangas",
+      "management": "Gestion des mangas",
+      "search": "Rechercher un manga",
+      "searchByName": "Recherche par nom de manga",
+      "pagination": {
+        "perPage": "Mangas par page :"
+      }
+    }
+  }
+}

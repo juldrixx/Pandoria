@@ -1,5 +1,5 @@
-import { updateUserForAbilities } from '../constants/ability';
-import { API_URL } from '../constants/app';
+import { updateUserForAbilities } from '../../constants/ability';
+import { API_URL } from '../../constants/app';
 
 function login(username, password) {
   const postInfo = {

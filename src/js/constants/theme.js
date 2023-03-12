@@ -14,6 +14,12 @@ export default (dark) =>
           ? darkVariables.secondaryColor
           : lightVariables.secondaryColor,
       },
+      action: {
+        disabled: dark
+          ? darkVariables.secondaryColor
+          : lightVariables.secondaryColor,
+        active: dark ? darkVariables.primaryColor : lightVariables.primaryColor,
+      },
       text: {
         primary: dark
           ? darkVariables.primaryColor
@@ -24,15 +30,17 @@ export default (dark) =>
         tertiary: dark
           ? darkVariables.tertiaryColor
           : lightVariables.tertiaryColor,
+        disabled: dark
+          ? darkVariables.secondaryColor
+          : lightVariables.secondaryColor,
       },
       background: {
         default: dark
           ? darkVariables.tertiaryColor
           : lightVariables.tertiaryColor,
-        paper: dark ? darkVariables.primaryColor : lightVariables.primaryColor,
+        paper: dark ? lightVariables.primaryColor : darkVariables.primaryColor,
       },
     },
-    components: {},
   });
 
 // export default (dark) =>

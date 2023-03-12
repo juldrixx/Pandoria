@@ -3,7 +3,8 @@ import { Button, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import rendererUtil from '../../utils';
+import { useTranslation } from 'react-i18next';
+import { rendererUtil } from '../../utils';
 import Image from '../../constants/images';
 import actions from '../../actions';
 import Footer from '../../components/_part/Footer';
@@ -12,8 +13,9 @@ function LoginPage(props) {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const { dark, error, loginUser } = props;
+  const { t } = useTranslation();
   const navigate = useNavigate();
+  const { dark, error, loginUser } = props;
 
   const handleUsername = (e) => {
     setUsername(e.target.value);
@@ -30,18 +32,18 @@ function LoginPage(props) {
 
   return (
     <>
-      {rendererUtil.title('Connexion')}
+      {rendererUtil.title(t('auth.title'))}
       <div className="login-page">
         <div className="form-block">
           <form onSubmit={handleLogin}>
             <header>
-              <h1>Connexion</h1>
+              <h1>{t('auth.title')}</h1>
             </header>
 
             <TextField
               type="text"
               id="username"
-              label="Nom d'utilisateur"
+              label={t('auth.username')}
               autoComplete="username"
               variant="filled"
               onChange={handleUsername}
@@ -52,7 +54,7 @@ function LoginPage(props) {
             <TextField
               type="password"
               id="password"
-              label="Mot de passe"
+              label={t('auth.password')}
               autoComplete="current-password"
               variant="filled"
               onChange={handlePassword}
@@ -60,18 +62,14 @@ function LoginPage(props) {
               required
             />
 
-            {error && (
-              <b className="error">
-                Nom d&apos;utilisateur ou mot de passe incorrecte
-              </b>
-            )}
+            {error && <b className="error">{t('auth.errorLogin')}</b>}
 
             <div className="buttons">
               <Button variant="text" onClick={() => navigate('/register')}>
-                S&apos;inscrire
+                {t('auth.register')}
               </Button>
               <Button variant="contained" size="large" type="submit">
-                Se connecter
+                {t('auth.login')}
               </Button>
             </div>
             <div className="password-forget">
@@ -80,7 +78,7 @@ function LoginPage(props) {
                 size="small"
                 onClick={() => navigate('/forget')}
               >
-                Mot de passe oublié ?
+                {t('auth.passwordForget')}
               </Button>
             </div>
           </form>

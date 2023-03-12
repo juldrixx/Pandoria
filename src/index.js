@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 import './stylesheets/main.scss';
 import App from './js/App';
 import store from './js/store/index';
+import './js/i18n';
 
 const root = createRoot(document.getElementById('root'));
 

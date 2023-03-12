@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer>
       <div className="container">
@@ -8,7 +11,7 @@ function Footer() {
           <i>© {new Date().getFullYear()} Pandoria</i>
         </small>
         <small>
-          Réalisé par{' '}
+          {t('footer.madeBy')}{' '}
           <a
             href="https://github.com/juldrixx"
             target="_blank"

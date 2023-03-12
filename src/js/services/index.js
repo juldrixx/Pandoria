@@ -1,4 +1,5 @@
-import themeService from './theme.service';
-import userService from './user.service';
+import themeService from './util/theme.service';
+import userService from './user/user.service';
+import mangaListService from './manga/list.service';
 
-export { themeService, userService };
+export { themeService, userService, mangaListService };

@@ -3,12 +3,15 @@ import React from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import actions from '../../actions';
 import Image from '../../constants/images';
 import routes from '../../constants/routes';
 
 function Header(props) {
+  const { t } = useTranslation();
+
   const { dark, user, logoutUser } = props;
 
   const handleLogout = (e) => {
@@ -33,7 +36,7 @@ function Header(props) {
               route.navbar && (
                 <NavLink key={route.name} to={route.path}>
                   {route.icon}
-                  {route.name}
+                  {t(route.name)}
                 </NavLink>
               )
           )}
