@@ -11,16 +11,21 @@ import App from './js/App';
 import store from './js/store/index';
 import './js/i18n';
 
-const root = createRoot(document.getElementById('root'));
-
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
-);
+let container = null;
+document.addEventListener('DOMContentLoaded', () => {
+  if (!container) {
+    container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(
+      <React.StrictMode>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </React.StrictMode>
+    );
+  }
+});
 
 if (module && module.hot) module.hot.accept();

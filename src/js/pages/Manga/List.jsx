@@ -16,6 +16,7 @@ import {
   ListItemText,
   ListItemAvatar,
   Avatar,
+  DialogTitle,
 } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
@@ -73,9 +74,10 @@ function MangaListPage(props) {
         <Dialog
           open={openSearch}
           onClose={() => setOpenSearch(false)}
+          scroll="paper"
           fullWidth
         >
-          <DialogContent>
+          <DialogTitle>
             <TextField
               label="Manga à ajouter"
               type="text"
@@ -85,13 +87,15 @@ function MangaListPage(props) {
               autoFocus
               fullWidth
             />
+          </DialogTitle>
+          <DialogContent dividers>
             <List>
               {searchResult.map((r) => (
                 <ListItem key={r.id}>
                   <ListItemAvatar>
-                    <Avatar src={r.cover} alt="toto" variant="rouded" />
+                    <Avatar src={r.cover} alt="toto" variant="rounded" />
                   </ListItemAvatar>
-                  <ListItemText primary={r.title} secondary={r.last_chapter} />
+                  <ListItemText primary={r.title} secondary={r.lastChapter} />
                 </ListItem>
               ))}
             </List>

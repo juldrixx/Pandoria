@@ -16,7 +16,13 @@ import { ABILITIES } from './constants/ability';
 function App(props) {
   const { dark, rank, logged } = props;
 
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false, // default: true
+      },
+    },
+  });
   const getAbilities = () => (rank === null ? ABILITIES[rank] : {});
 
   return (
