@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home, MenuBook } from '@mui/icons-material';
-import { E404Page, HomePage, MangaListPage } from '../pages';
+import { E404Page, HomePage, MangaListPage, MangaSearchPage } from '../pages';
 import { RANK_ADMIN, RANK_USER } from './dbValues';
 
 export default [
@@ -25,6 +25,11 @@ export default [
     path: '/mangas',
     icon: <MenuBook />,
     navbar: true,
+    allowed: [RANK_USER, RANK_ADMIN],
+  },
+  {
+    path: '/mangas/search',
+    element: <MangaSearchPage />,
     allowed: [RANK_USER, RANK_ADMIN],
   },
 ];
