@@ -18,7 +18,7 @@ function add(userId, mangaId) {
   };
 
   return new Promise((resolve, reject) => {
-    fetch(`${API_URL}/mangas/list`, postInfo)
+    fetch(`${API_URL}/mangas/follow`, postInfo)
       .then((result) => {
         if (!result.ok) throw result;
         return result.json();
@@ -39,7 +39,7 @@ function get(userId) {
   };
 
   return new Promise((resolve, reject) => {
-    fetch(`${API_URL}/mangas/list/${userId}`, getInfo)
+    fetch(`${API_URL}/mangas/follow/${userId}`, getInfo)
       .then((result) => {
         if (!result.ok) throw result;
         return result.json();
@@ -60,7 +60,7 @@ function remove(userId, mangaId) {
   };
 
   return new Promise((resolve, reject) => {
-    fetch(`${API_URL}/mangas/list/${userId}/${mangaId}`, getInfo)
+    fetch(`${API_URL}/mangas/follow/${userId}/${mangaId}`, getInfo)
       .then((result) => {
         if (!result.ok) throw result;
         return result.json();
@@ -86,7 +86,7 @@ function getPaginate(userId, perPage, page, filterValue = null) {
 
   return new Promise((resolve, reject) => {
     fetch(
-      `${API_URL}/mangas/list/${userId}?perPage=${perPage}&page=${page}${filter}`,
+      `${API_URL}/mangas/follow/${userId}?perPage=${perPage}&page=${page}${filter}`,
       getInfo
     )
       .then((result) => {

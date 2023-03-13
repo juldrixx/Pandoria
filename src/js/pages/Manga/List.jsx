@@ -2,40 +2,59 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useDebounce } from 'use-debounce';
 import {
   Button,
   CircularProgress,
   Icon,
   TablePagination,
   TextField,
+  Dialog,
+  DialogContent,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
 } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { rendererUtil } from '../../utils';
-import { mangaListService } from '../../services';
+import { mangaFollowService, mangaSearchService } from '../../services';
 
 function MangaListPage(props) {
   const [filter, setFilter] = React.useState('');
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
+  const [openSearch, setOpenSearch] = React.useState(false);
+  const [search, setSearch] = React.useState('');
+  const [searchDc] = useDebounce(search, 1000);
 
   const { t } = useTranslation();
   const { user } = props;
 
-  const { isLoading, data } = useQuery({
-    queryKey: ['listManga', { filter, page, perPage }],
+  const mangaFollow = useQuery({
+    queryKey: ['mangaFollow', { filter, page, perPage }],
     queryFn: () =>
-      mangaListService.getPaginate(
+      mangaFollowService.getPaginate(
         user.id,
         perPage,
         page,
-        filter ? { filteredBy: 'mangas.name', filteredWith: filter } : null
+        filter ? { filteredBy: 'manga.name', filteredWith: filter } : null
       ),
     keepPreviousData: true,
   });
 
+  const mangaSearch = useQuery({
+    queryKey: ['mangaSearch', { searchDc, page, perPage }],
+    queryFn: () => mangaSearchService.name(searchDc, 100, page),
+    keepPreviousData: true,
+    enabled: !!searchDc,
+  });
+
   const navigate = useNavigate();
-  const mangas = (data?.result || []).map((r) => r.mangas);
+  const mangas = (mangaFollow.data?.result || []).map((r) => r.mangas);
+  const searchResult = mangaSearch.data?.result ?? [];
 
   return (
     <>
@@ -43,16 +62,41 @@ function MangaListPage(props) {
       <div className="manga-page">
         <div className="header">
           <h1>{t('manga.my')}</h1>
-          <Button
-            onClick={() => navigate('/mangas/available')}
-            variant="outlined"
-          >
+          <Button onClick={() => setOpenSearch(true)} variant="outlined">
             {t('manga.management')}
           </Button>
           <Button onClick={() => navigate('/mangas/search')} variant="outlined">
             {t('manga.search')}
           </Button>
         </div>
+
+        <Dialog
+          open={openSearch}
+          onClose={() => setOpenSearch(false)}
+          fullWidth
+        >
+          <DialogContent>
+            <TextField
+              label="Manga à ajouter"
+              type="text"
+              variant="standard"
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
+              autoFocus
+              fullWidth
+            />
+            <List>
+              {searchResult.map((r) => (
+                <ListItem key={r.id}>
+                  <ListItemAvatar>
+                    <Avatar src={r.cover} alt="toto" variant="rouded" />
+                  </ListItemAvatar>
+                  <ListItemText primary={r.title} secondary={r.last_chapter} />
+                </ListItem>
+              ))}
+            </List>
+          </DialogContent>
+        </Dialog>
 
         <div className="search">
           <TextField
@@ -66,7 +110,7 @@ function MangaListPage(props) {
         </div>
 
         <div className="list-card">
-          {isLoading ? (
+          {mangaFollow.isLoading ? (
             <CircularProgress className="load-spinner" size="80px" />
           ) : (
             mangas.map((manga) => (
@@ -90,7 +134,7 @@ function MangaListPage(props) {
 
         <TablePagination
           component="div"
-          count={data?.total ?? 0}
+          count={mangaFollow.data?.total ?? 0}
           page={page - 1}
           rowsPerPage={perPage ?? 0}
           onPageChange={(_, v) => setPage(v + 1)}

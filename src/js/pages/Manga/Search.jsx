@@ -15,9 +15,9 @@ function MangaSearchPage() {
 
   const { data } = useQuery({
     queryKey: ['searchManga', { search, page, perPage }],
-    queryFn: () =>
-      search.length > 0 && mangaSearchService.name(search, perPage, page),
+    queryFn: () => mangaSearchService.name(search, perPage, page),
     keepPreviousData: true,
+    enabled: !!search,
   });
 
   // const navigate = useNavigate();

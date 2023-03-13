@@ -28,6 +28,7 @@ export default [
     allowed: [RANK_USER, RANK_ADMIN],
   },
   {
+    name: 'route.mangasSearch',
     path: '/mangas/search',
     element: <MangaSearchPage />,
     allowed: [RANK_USER, RANK_ADMIN],
